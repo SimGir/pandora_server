@@ -9,9 +9,19 @@ router.get("/",(req,res)=>{
     pool.query(sql,[title],(err,result)=>{
         if(err) throw err;
         if(result.length>0){
-            res.send({code:1,msg:"success",data:result});
+            res.send({
+                success: true,
+                code: 1,
+                msg:"成功",
+                data: result
+            });
         }else{
-            res.send({code:-1,msg:"not found"});
+            res.send({
+                success: false,
+                code: -1,
+                msg:"没有查找到该商品",
+                data: []
+            });
         }
     })
 })

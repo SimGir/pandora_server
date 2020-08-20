@@ -18,8 +18,7 @@ router.get("/",(req,res)=>{
             if(result.length!==0){
                 res.send({code:1,msg:"查找成功",data:result})
             }else{
-                var data = [];
-                res.send({code:1,msg:"未查找到记录",data})
+                res.send({code:-1,msg:"未查找到记录",data:[]})
             }
         })
     }

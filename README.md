@@ -12,13 +12,18 @@
 
 2. 导入数据库
 
-	找到pandora.sql文件，创建名为pandora的数据库
+	创建名为pandora的数据库,执行pandora.sql文件
 
 3. 进入项目，安装依赖
 
+	cd pandora_server
 	npm install
 
-4. 启动项目
+4. 更改数据库连接配置
+
+	更改pool.js文件
+
+5. 启动项目
 
 	node app.js
 

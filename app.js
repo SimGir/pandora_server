@@ -41,7 +41,7 @@ app.use(cors({
 	credentials: true  //每次请求需要验证，必须加上，否则不能跨域访问
 }));
 
-//允许所有来源的请求，因为
+//允许所有来源的请求
 app.all("",function(req,res,next){
 	res.header('Access-Control-Allow-Origin','*')
 	res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS')
@@ -61,7 +61,7 @@ app.use(allowCorssDomain); */
 
 //保存用户登录凭证
 app.use(session({
-	secret:"128为字符串",
+	secret:"128位字符串",
 	resave:true,  //每次请求更新数据
 	saveUninitialized:true  //保存初始数据
 }))
@@ -95,6 +95,4 @@ app.use("/getaddress",getaddress);  // 查找收货地址
 app.use("/allproducts",allproducts);  // 查找所有商品
 app.use("/getproduct",getproduct);  // 根据多个商品编号查找商品详情
 app.use("/userlist",userlist);  // 查找所有用户
-
-
 
